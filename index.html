@@ -3,146 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Receipt </title>
+    <title>Receipt</title>
     <style> 
-body{
-    background-color: beige;
-}
-.receipt-container{
-    width: 50%;
-    margin: 0 auto;
-    border: 2px solid brown;
-    background-color: white;
-    border-radius: 5px;
-}
-.logo{
-    width:150px;
-    height: 150px;
-    padding: auto 40px;
-    /* display:block; */
-    /* margin:0 auto; */
-}
-.title-name{
-    /* text-align: center; */
-    font-size: 1rem;
-    padding-left: 15px;
-    font-weight: bold;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        body {
+            background-color: beige;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .receipt-container {
+            width: 50%;
+            margin: 0 auto;
+            border: 2px solid brown;
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+        }
 
-}
-.header-title{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.header-title h2{
-    margin-right: 10px;
-    font-size: 35px;
-    color:color-mix(in srgb-linear, red 70%, yellow 25%)
-}
-.receipt-address{
-    text-align: right;
-    margin-right: 10px;
-}
-.receipt-mob{
-    text-align: right;
-    margin-right: 10px;
-}
-.receipt-title{
-    text-align: center;
-    font-weight: bolder;
-    font-size: 30px;
-    margin: 50px 0;
-}
-.receipt-detail{
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
-    margin: 25px 0;
-}
-.receipt-no{
-    padding-left: 5px;
-    color: darkblue;
-    width: 30%;
-}
-.receipt-no1{
-    font-weight: bold;
-    width: 30%;
-}
-.receipt-no2{
-    font-weight: 100;
-    font-size: 15px;
-    width: 30%;
-}
-.acc-sign{
-    margin-right: 10px;
-    text-align: right;
-    margin-top: 100px;
-}
-.stamp{
-    width: 200px;
-    position: absolute;
-    height: 10px;
-    right: 0;
-}
-.footer{
-    text-align: center;
-    padding: 20px 0;
-    font-size: 20px;
-    background-color: #ffca39;
-    /* height: 20px;
-    line-height: 10px; */
-}
-.btn{
-    color:rgb(2, 101, 2);
-    height: 50px;
-    width:90px;
-    margin:10px;
-    align-items: center;
-    color: black;
-    font-weight: 35px;
-     /* display: block; */
-     /* padding-top:10px; */
-}
-.btn:hover{
-    background-color: green;
-   transition:0.5px;
-   color: white;
-}
+        .logo {
+            width: 150px;
+            height: 150px;
+        }
 
+        .header-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title-name {
+            font-size: 1rem;
+            padding-left: 15px;
+            font-weight: bold;
+        }
+
+        .header-title h2 {
+            margin-right: 10px;
+            font-size: 35px;
+            color: red;
+        }
+
+        .receipt-address, .receipt-mob {
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        .receipt-title {
+            text-align: center;
+            font-weight: bolder;
+            font-size: 30px;
+            margin: 50px 0;
+        }
+
+        .receipt-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+            margin: 25px 0;
+        }
+
+        .receipt-no, .receipt-no1, .receipt-no2 {
+            flex: 1;
+        }
+
+        .receipt-no {
+            color: darkblue;
+        }
+
+        .receipt-no2 label, 
+        .receipt-no2 input {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 16px;
+        }
+
+        .receipt-no2 input {
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .acc-sign {
+            margin-right: 10px;
+            text-align: right;
+            margin-top: 100px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 20px;
+            background-color: #ffca39;
+        }
+
+        .btn {
+            height: 50px;
+            width: 90px;
+            margin: 10px auto;
+            display: block;
+            text-align: center;
+            background-color: #f1f1f1;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: green;
+            color: white;
+            transition: 0.3s;
+        }
+
+       
+        @media (max-width: 600px) {
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .title-name {
+                font-size: 0.8rem;
+            }
+
+            .header-title h2 {
+                font-size: 25px;
+            }
+
+            .receipt-detail {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .receipt-no2 input {
+                width: 100%;
+            }
+        }
+
+        /* Tablet Styles */
+        @media (min-width: 601px) and (max-width: 800px) {
+            .receipt-container {
+                width: 70%;
+            }
+        }
+
+        /* Laptop Styles */
+        @media (min-width: 801px) and (max-width: 1200px) {
+            .receipt-container {
+                width: 60%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="receipt-container">  
         <div class="header">
             <div class="header-title">
-                <img src="/img/images.png" class="logo"/>
-                <h2 class="title-name"> PIXELS Pvt. Ltd</h2>
+                <img src="img/images.png" class="logo" alt="Logo"/>
+                <h2 class="title-name">PIXELS Pvt. Ltd</h2>
             </div>
-
+            <p class="detail">Name: Saniya Vaidya</p>
+            <p class="detail">Contact No: 7083424717</p>
             <p class="receipt-address">
-                91 Springboard,Creaticity <br/>
-                mall,Yerwada, Pune <br/>
-                Maharashta - 411006.
+                91 Springboard, Creaticity Mall<br/>
+                Yerwada, Pune, Maharashtra - 411006
             </p>
             <p class="receipt-mob">+91-1234567890</p>
         </div>
-        <hr />
+        <hr/>
 
         <div class="receipt-body">
             <h3 class="receipt-title"><i><u>Payment Receipt</u></i></h3>
             <div class="receipt-detail">
-                <div class="receipt-no">Receipt-No. :</div>
+                <div class="receipt-no">Receipt No.:</div>
                 <div class="receipt-no1">12345</div>
             </div>
 
             <div class="receipt-detail">
-                <div class="receipt-no">Amount :</div>
+                <div class="receipt-no">Amount:</div>
                 <div class="receipt-no1">5000/-</div>
             </div>
 
             <div class="receipt-detail">
-                <div class="receipt-no">Payment Mode :</div>
+                <div class="receipt-no">Payment Mode:</div>
                 <div class="receipt-no1">
                     <select>
                         <option>Cash</option>
@@ -153,32 +197,21 @@ body{
             </div>
 
             <div class="receipt-detail">
-                <div class="receipt-no">Payment Date :</div>
+                <div class="receipt-no">Payment Date:</div>
                 <div class="receipt-no2">
-                    <label><input type="datetime-local"></label>
+                    <label for="payment-date"></label>
+                    <input id="payment-date" type="datetime-local">
                 </div>
             </div>
 
-            <!-- <div class="stamp">
-                <img src="stamp.png">
-                <p class="acc-sign">Accountant Signature</p>
-            </img>
-            </div> -->
-
             <p class="acc-sign">Accountant Signature</p>
-            <br /><br />
         </div>
         <hr/>
 
         <div class="footer">
-        Thank you for your Payment.
-       
+            Thank you for your Payment.
         </div>
-        <div>
-                 <button class="btn"> print</button> 
-   
-    </div>
-    
+        <button class="btn">Print</button>
     </div>
 </body>
 </html>
